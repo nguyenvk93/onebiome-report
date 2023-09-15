@@ -4,17 +4,30 @@
     "es2021": true
   },
   "extends": [
+    "airbnb",
     "plugin:react/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": ["react", "@typescript-eslint", "react-hooks"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks"
+  ],
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"],
-        "moduleDirectory": ["node_modules", "src/"]
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ],
+        "moduleDirectory": [
+          "node_modules",
+          "src/"
+        ]
       },
       "typescript": {}
     }
@@ -33,11 +46,17 @@
     "no-undef": "off",
     "no-unused-vars": "warn",
     "react/display-name": "off",
-    "arrow-body-style": ["error", "always"],
+    "arrow-body-style": [
+      "error",
+      "always"
+    ],
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".ts", ".tsx", ".js"]
+        "extensions": [
+          ".ts",
+          ".tsx"
+        ]
       }
     ],
     "react/jsx-props-no-spreading": "off",
@@ -73,7 +92,10 @@
         "minItems": 3
       }
     ],
-    "function-paren-newline": ["warn", "multiline-arguments"],
+    "function-paren-newline": [
+      "warn",
+      "multiline-arguments"
+    ],
     "import/extensions": [
       "error",
       {
@@ -96,7 +118,9 @@
       "error",
       {
         "props": true,
-        "ignorePropertyModificationsFor": ["state"]
+        "ignorePropertyModificationsFor": [
+          "state"
+        ]
       }
     ],
     "react-hooks/rules-of-hooks": "error",
