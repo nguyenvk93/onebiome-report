@@ -1,6 +1,6 @@
 ## Requirements
 
-- [Node v16.16.0](https://nodejs.org/en/blog/release/v16.16.0/)
+- [Node v18.17.1](https://nodejs.org/en/blog/release/v18.17.1)
 - [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
 
