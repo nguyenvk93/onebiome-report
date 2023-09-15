@@ -1,0 +1,53 @@
+// Variable
+$body-font: "Bariol", "BlogScript", "Avenir", "DK Knockdown", Helvetica, Arial,
+  serif;
+$f-b: "Bariol";
+$f-av: "Avenir";
+$f-bs: "BlogScript";
+$f-dk: "DK Knockdown";
+
+// Font size
+$fz-small: 16px;
+$fz-normal: 18px;
+$fz-large: 20px;
+
+// transtion style
+$trans-1: 100ms all ease-in-out;
+$trans-2: 200ms all ease-in-out;
+$trans-3: 300ms all ease-in-out;
+
+// Colors
+$blue-kids-color: #009fe3;
+$blue-adult-color: #286bb2;
+$blue-color: var(--blue-100);
+$black: #000000;
+$blue-200: #009fe3; // User for Link <a>
+$blue-300: #006997; // User for Link <a> hover
+$blue-400: #008cd1; // User for Link <a> Education
+$blue-500: #37caf2; // User for Link <a> Education hover
+$blue-600: #8fbff1;
+$blue-700: #5baaec;
+$white: #ffffff;
+$white-100: #f5f9ff;
+$green-100: #00d08b;
+$green-110: #158f66;
+
+:root {
+  --blue-100: #009fe3;
+  --blue-110: #{darken(#009fe3, 10%)};
+  --blue-120: linear-gradient(180deg, #00a2e4 0%, #00c6f0 100%);
+}
+
+.rpv-core__inner-pages {
+  overflow: hidden !important;
+}
+
+.rpv-core__viewer {
+  + .rpv-core__viewer {
+    margin-top: 40px;
+  }
+}
+
+.rpv-core__page-layer {
+  margin: 0 auto;
+}

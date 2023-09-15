@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Bariol";
+  src: url("Bariol-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("Avenir-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bariol";
+  src: url("Bariol-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BlogScript";
+  src: url("BlogScript.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DK Knockdown";
+  src: url("DKKnockdown.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

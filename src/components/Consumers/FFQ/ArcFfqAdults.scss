@@ -1,0 +1,249 @@
+// Note: If use with html2canvas, please don't use: :before, :after, box-shadow
+
+$yellow: #f7b535;
+$orange: #fd7f29;
+$green: #52cd66;
+$blue: #009fe3;
+
+@mixin ffq($chartScale) {
+  $chr-w-banner: 595 * $chartScale;
+  $chr-h-banner: 244 * $chartScale;
+  $chr-w: 195 * $chartScale;
+  $chr-h: 195 * $chartScale;
+  $chr-w-add: 2 * $chartScale;
+  $chr-h-add: 2 * $chartScale;
+  $chr-w-circle: 178 * $chartScale + $chr-w-add;
+  $chr-h-circle: 178 * $chartScale + $chr-h-add;
+  $chr-line: 7 * $chartScale;
+  $chr-w-icon: 10.5 * $chartScale;
+  $chr-h-icon: 10.5 * $chartScale;
+  $chr-pos-icon: 2 * $chartScale;
+  .chart-banner {
+    background-color: #fff;
+    width: $chr-w-banner + px;
+    height: $chr-h-banner + px;
+    // position: relative;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    .f-banner {
+      width: $chr-w-banner + px;
+      position: relative;
+      z-index: 2;
+    }
+    .chart-bg {
+      position: absolute;
+      left: 196 * $chartScale + px;
+      top: 20.5 * $chartScale + px;
+      z-index: 1;
+    }
+  }
+  .chart-bg {
+    border-radius: 50%;
+    background-color: rgba(#fff, 0.1);
+    width: $chr-w + 8 * $chartScale + px;
+    height: $chr-h + 8 * $chartScale + px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // position: relative;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 0;
+  }
+  .f-bg-inner {
+    width: 166 * $chartScale + px;
+    height: 166 * $chartScale + px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  .chart-ffq-group {
+    border: 7.5 * $chartScale + px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: $chr-w + px;
+    height: $chr-h + px;
+    .chart-inner {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: $chr-w-circle + px;
+      height: $chr-h-circle + px;
+      z-index: 3;
+    }
+    .mask {
+      position: absolute;
+      width: calc(50% - #{($chr-w-add - 1 * $chartScale) + px});
+      height: calc(50% - #{($chr-h-add - 1 * $chartScale) + px});
+      overflow: hidden;
+      &.left-top {
+        left: 0;
+        top: 0;
+        .pie {
+          background: rgba(#feaa2c, 0.4);
+          left: 0;
+          top: 0;
+        }
+        .pie-after {
+          background-color: #fff7db;
+          border-color: $yellow;
+          left: 0;
+          top: 0;
+        }
+      }
+      &.right-top {
+        right: 0;
+        top: 0;
+        .pie {
+          background: rgba(#ff8227, 0.4);
+          right: 100%;
+          top: 0;
+        }
+        .pie-after {
+          background-color: #ffe9d9;
+          border-color: $orange;
+          right: 100%;
+          top: 0;
+          transform: rotate(90deg);
+        }
+      }
+      &.right-bottom {
+        right: 0;
+        bottom: 0;
+        .pie {
+          background: rgba(#31b436, 0.4);
+          right: 100%;
+          bottom: 0;
+        }
+        .pie-after {
+          background-color: #ddf7e2;
+          border-color: $green;
+          right: 100%;
+          bottom: 0;
+          transform: rotate(180deg);
+        }
+      }
+      &.left-bottom {
+        left: 0;
+        bottom: 0;
+        .pie {
+          background: rgba(#1fcfe7, 0.4);
+          left: 0;
+          bottom: 0;
+        }
+        .pie-after {
+          background-color: #d2f1ff;
+          border-color: $blue;
+          left: 0;
+          bottom: 0;
+          transform: rotate(270deg);
+        }
+      }
+    }
+    .pie {
+      width: calc(($chr-w-circle - $chr-w-add) / 2) + px;
+      height: ($chr-h-circle - $chr-h-add) + px;
+      transform-origin: 100% 50%;
+      position: absolute;
+      border-width: 0;
+      border-style: solid;
+      border-radius: 100% 0 0 100% / 50% 0 0 50%;
+      border-right: none;
+      z-index: 3;
+    }
+    .pie-after {
+      width: calc(($chr-w-circle - $chr-w-add) / 2) + px;
+      height: ($chr-h-circle - $chr-h-add) + px;
+      transform-origin: 100% 50%;
+      position: absolute;
+      border-width: $chr-line + px;
+      border-style: solid;
+      border-radius: 100% 0 0 100% / 50% 0 0 50%;
+      border-right: none;
+      z-index: 1;
+    }
+    .icon {
+      width: $chr-w-circle + px;
+      height: $chr-h-circle + px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 5;
+      img {
+        width: 20 * $chartScale + px;
+        height: auto;
+        position: relative;
+        top: 1 * $chartScale + px;
+        max-width: inherit;
+      }
+      .f-inner {
+        border-radius: 50%;
+        width: $chr-w-icon + px;
+        height: $chr-h-icon + px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        z-index: 1;
+      }
+      &.left-top {
+        .f-inner {
+          left: -$chr-pos-icon + px;
+          top: 50%;
+          margin-top: -(calc($chr-h-icon / 2)) + px;
+        }
+      }
+      &.right-top {
+        .f-inner {
+          top: -$chr-pos-icon + px;
+          left: 50%;
+          margin-left: -(calc($chr-h-icon / 2)) + px;
+        }
+      }
+      &.right-bottom {
+        .f-inner {
+          right: -$chr-pos-icon + px;
+          top: 50%;
+          margin-top: -(calc($chr-h-icon / 2)) + px;
+        }
+      }
+      &.left-bottom {
+        .f-inner {
+          bottom: -$chr-pos-icon + px;
+          left: 50%;
+          margin-left: -(calc($chr-h-icon / 2)) + px;
+        }
+      }
+    }
+    .disabled {
+      .pie-after {
+        background-color: #e7e2df !important;
+        border-color: #d8d5d3 !important;
+      }
+    }
+  }
+}
+
+.ffq-arc-pdf-adults {
+  pointer-events: none;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  position: relative;
+  z-index: -1;
+  &:not(.isMobile) {
+    @include ffq(4);
+  }
+  &.isMobile {
+    @include ffq(1);
+  }
+}

@@ -1,0 +1,31 @@
+$def-box-shadow: 0px 12px 22px rgba(#0a679b, 0.15);
+$def-transition: all 0.3s ease-in-out;
+$def-gradient-blue: linear-gradient(180deg, #00a2e4 0%, #00c6f0 100%);
+
+@mixin placeholder($val) {
+  &::-webkit-input-placeholder {
+    color: $val;
+  }
+  &:-moz-placeholder {
+    color: $val;
+    opacity: 1;
+  }
+  &::-moz-placeholder {
+    color: $val;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color: $val;
+  }
+  &:placeholder {
+    color: $val;
+  }
+}
+
+@mixin setTransition($value...) {
+  transition: $value 0.3s ease-in-out;
+}
+
+@mixin text-blue() {
+  color: var(--blue-100);
+}

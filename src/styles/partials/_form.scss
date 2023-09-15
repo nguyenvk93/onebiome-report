@@ -1,0 +1,226 @@
+// ---- BOOTSTRAP ---- //
+
+.form-control {
+  @include placeholder(#b7bac9);
+  background-color: $white;
+  border: solid 1px #c9d2e0;
+  border-radius: 5px;
+  box-shadow: none !important;
+  color: #495057;
+  padding: 6px 18px;
+  height: 50px;
+  font-size: 18px;
+  &:focus {
+    color: #495057;
+  }
+  &[type="file"] {
+    padding: 6px 12px;
+    height: auto;
+  }
+}
+
+.form-label {
+  font-weight: 700;
+  margin-bottom: 1px;
+}
+
+.select-label {
+  color: black;
+  font-weight: 700;
+  font-family: $f_b;
+  font-size: 18px;
+}
+
+.input-icon {
+  position: relative;
+  .icon {
+    position: absolute;
+    top: 30%;
+    right: 4%;
+    height: 20px;
+    width: 20px;
+    color: #ccc;
+  }
+}
+
+.btn {
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  height: 42px;
+  padding: 6px 18px;
+  outline: none !important;
+  transition: all 0.2s ease-in-out;
+  &:disabled {
+    opacity: 0.4;
+  }
+  &.btn-primary {
+    background-color: var(--blue-100);
+    border-color: var(--blue-100);
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: var(--blue-110);
+      border-color: var(--blue-110);
+      color: $white;
+    }
+  }
+  &.btn-outline-primary {
+    background-color: $white;
+    border: 2px solid var(--blue-100);
+    color: var(--blue-100);
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #f5f5f5;
+      color: var(--blue-100);
+    }
+    &.disable-full:disabled {
+      background-color: #c9d2e0;
+      border-color: #c9d2e0;
+      color: $white;
+      opacity: 1;
+    }
+  }
+  &.btn-secondary {
+    background-color: #fff;
+    border-color: #eaeaea;
+    color: #333;
+  }
+  &.type-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    white-space: nowrap;
+  }
+}
+
+.form-group {
+  margin-bottom: 19px;
+}
+
+.form-text {
+  display: block;
+  color: grey !important;
+  font-size: 14px;
+}
+
+.invalid-feedback {
+  font-size: 14px;
+}
+
+.form-check-input {
+  border: 2px solid #c9d2e0;
+  width: 21px;
+  height: 21px;
+  margin-top: 0;
+  box-shadow: none !important;
+  + label {
+    cursor: pointer;
+    display: inline;
+    padding-left: 12px;
+    margin-bottom: 0;
+    line-height: 1.35;
+    font-weight: 400;
+  }
+  &[type="checkbox"]:not([role="switch"]) {
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s ease-in-out;
+    &:hover:not(:checked):not(.is-invalid) {
+      border-color: #c9d2e0;
+    }
+    &:not(:checked):not(.is-invalid) {
+      &:hover,
+      &:focus {
+        border-color: #c9d2e0;
+      }
+    }
+  }
+  &:checked[type="checkbox"]:not([role="switch"]) {
+    background-color: var(--blue-100);
+    border-color: var(--blue-100);
+  }
+  &[type="radio"] {
+    position: absolute;
+    left: -9999px;
+    + label {
+      position: relative;
+      padding-left: 28px;
+      margin-left: 0;
+      padding-top: 2px;
+      &::before {
+        background-color: $white;
+        border: 2px solid #c9d2e0;
+        border-radius: 50%;
+        content: "";
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 0.2s ease-in-out;
+      }
+      &::after {
+        background-color: var(--blue-100);
+        border-radius: 50%;
+        content: "";
+        width: 13px;
+        height: 13px;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        transform: scale(0);
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+  &:checked[type="radio"] {
+    + label {
+      &::before {
+        border-color: var(--blue-100);
+      }
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+  &:disabled {
+    + label {
+      color: #b8b8b8;
+      pointer-events: none;
+      &::before {
+        background-color: #ddd;
+      }
+    }
+  }
+}
+
+.input-group-text {
+  background-color: transparent;
+  color: $black;
+  font-size: $fz-normal;
+  line-height: 1;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.form-switch {
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  .form-check-input {
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 0;
+    width: 44px;
+    height: 24px;
+    + label {
+      padding-left: 10px;
+    }
+  }
+}
+
+// ---- END BOOTSTRAP ---- //
